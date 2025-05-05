@@ -1,0 +1,18 @@
+
+{%extends "basic.html"%}
+{%block content%}
+{%if userLoggedIn%}
+<p>Logged In</p>
+{%else%}
+<p>Logged out</p>
+{%endif%}
+<h1>Hey {{name | capitalize}}</h1>
+<h1>Hey {{letters}}</h1>
+<ul>
+    {%for item in letters%}
+    <li>{{item}}</li>
+    {%endfor%}
+</ul>
+<h2>Puppy pics</h2>
+<img src="../static/puppy.jpeg" alt="">
+{%endblock%}

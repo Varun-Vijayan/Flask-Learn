@@ -1,0 +1,15 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Page starts</h1>
+    {%block content%}
+
+    {%endblock%}
+    <a href="{{url_for('dummyPage')}}"> Click here to view dummy page</a>
+    <a href="{{url_for('static',filename='puppy.jpeg')}}"> Click here to view puppy page</a>
+</body>
+</html>

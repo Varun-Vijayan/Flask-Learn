@@ -1,16 +1,16 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return "Hello World"
-@app.route('/page')
-def page():
-    return "Hello Page"
-@app.route('/user/<name>')
-def userInfo(name):
-    return f'''Hello {name[100]}'''
+@app.route('/<name>')
+def index(name):
+    letters = list(name)
+    userLoggedIn =False
+    return render_template('page.html',name=name,letters=letters,userLoggedIn=userLoggedIn)
+
+@app.route('/dummyPage')
+def dummyPage():
+    return('dummy page')
 
 if __name__ == "__main__":
     app.run(debug=True)
